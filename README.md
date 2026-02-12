@@ -23,7 +23,7 @@ Users should be able to:
 
 ## Links
 
-- Live Site URL: [https://amansgz.github.io/3-column-preview-card](https://amansgz.github.io/3-column-preview-card)
+- Live Site URL: [https://fem-solutions.github.io/3-column-preview-card/](https://fem-solutions.github.io/3-column-preview-card/)
 
 ## Author
 
