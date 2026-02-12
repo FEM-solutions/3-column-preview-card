@@ -3,11 +3,13 @@
 *
 * RESET
 * GLOBAL-STYLES
-* CARDS
+* CARD-TYPOGRAPHY
 * BUTTONS
+* CARD-COLUMNS
 * LAYOUT
 * MEDIA-QUERIES
-*/
+*
+**/
 
 /*--------------------------*\
   #RESET 
@@ -79,29 +81,8 @@ html {
 }
 
 /*--------------------------*\
-  #CARDS 
+  #CARD-TYPOGRAPHY 
 \*--------------------------*/
-
-.card {
-  inline-size: min(20rem, 95vw);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-300);
-
-  padding: var(--spacing-300);
-}
-
-.card--sedans {
-  background-color: var(--gold-500);
-}
-
-.card--suvs {
-  background-color: var(--cyan-800);
-}
-
-.card--luxury {
-  background-color: var(--green-950);
-}
 
 .card__title {
   font-family: var(--ff-heading);
@@ -120,11 +101,6 @@ html {
   max-inline-size: 31ch;
 }
 
-.card__icon {
-  inline-size: 4rem;
-  block-size: auto;
-}
-
 /*--------------------------*\
   #BUTTONS 
 \*--------------------------*/
@@ -139,11 +115,13 @@ html {
   font-family: var(--ff-body);
   text-decoration: none;
 
-  border: 2px solid transparent;
+  border: 2px solid transparent; /* for hover states */
   border-radius: var(--border-radius-lg);
   background-color: var(--gray-100);
   cursor: pointer;
-  transition: color 0.2s ease, border 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border 0.2s ease;
 }
 
 .card__button--sedans {
@@ -176,9 +154,47 @@ html {
   background-color: var(--green-950);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .card__button {
+    transition-duration: 0.01ms;
+  }
+}
+
+/*--------------------------*\
+  #CARD-COLUMNS 
+\*--------------------------*/
+
+.card__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+
+  padding: var(--spacing-300);
+}
+
+.card__column--sedans {
+  background-color: var(--gold-500);
+}
+
+.card__column--suvs {
+  background-color: var(--cyan-800);
+}
+
+.card__column--luxury {
+  background-color: var(--green-950);
+}
+
 /*--------------------------*\
   #LAYOUT 
 \*--------------------------*/
+* {
+  outline: 1px solid red;
+}
+
+main {
+  padding-block: var(--spacing-300);
+  background-color: var(--gray-100);
+}
 
 .container {
   display: flex;
@@ -187,13 +203,11 @@ html {
   justify-content: center;
   min-block-size: 100dvh;
 
-  padding-block: var(--spacing-300);
-  background-color: var(--gray-100);
+  padding-inline: var(--spacing-100);
 }
 
-.cards-container {
-  display: flex;
-  flex-direction: column;
+.card-grid {
+  display: grid;
 
   border-radius: var(--border-radius-sm);
 
@@ -206,18 +220,12 @@ html {
 \*--------------------------*/
 
 @media (min-width: 48rem) {
-  .cards-container {
-    flex-direction: row;
-    inline-size: min(56rem, 90vw);
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-inline-size: 54rem;
   }
 
   .card__text {
     margin-block-end: var(--spacing-300);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card__button {
-    transition-duration: 0.01ms;
   }
 }

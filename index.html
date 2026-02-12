@@ -21,20 +21,23 @@
 </head>
 
 <body>
-    <main>
 
-        <section class="cars-section">
+    <main class="main">
 
-            <div class="container">
+        <!-- container start -->
+        <div class="container">
+
+            <!-- card start -->
+            <article class="card">
 
                 <h1 class="visually-hidden">Vehicle type comparison</h1>
 
-                <article class="cards-container">
+                <!-- card grid start -->
+                <div class="card-grid">
 
-                    <section class="card  card--sedans" aria-labelledby="sedan-heading">
+                    <section class="card__column  card__column--sedans" aria-labelledby="sedan-heading">
 
-                        <img class="card__icon" src="./images/icon-sedans.svg" alt="Car icon" width="64" height="40"
-                            aria-hidden="true">
+                        <img src="./images/icon-sedans.svg" alt="Car icon" width="64" height="40" aria-hidden="true">
 
                         <h2 class="card__title" id="sedan-heading">
                             Sedans
@@ -52,10 +55,9 @@
                     </section>
 
 
-                    <section class="card  card--suvs" aria-labelledby="suv-heading">
+                    <section class="card__column  card__column--suvs" aria-labelledby="suv-heading">
 
-                        <img class="card__icon" src="./images/icon-suvs.svg" alt="Car icon" width="64" height="40"
-                            aria-hidden="true">
+                        <img src="./images/icon-suvs.svg" alt="Car icon" width="64" height="40" aria-hidden="true">
 
                         <h2 class="card__title" id="suv-heading">
                             SUVs
@@ -73,10 +75,9 @@
                     </section>
 
 
-                    <section class="card  card--luxury" aria-labelledby="luxury-heading">
+                    <section class="card__column  card__column--luxury" aria-labelledby="luxury-heading">
 
-                        <img class="card__icon" src="./images/icon-luxury.svg" alt="Car icon" width="64" height="40"
-                            aria-hidden="true">
+                        <img src="./images/icon-luxury.svg" alt="Car icon" width="64" height="40" aria-hidden="true">
 
                         <h2 class="card__title" id="luxury-heading">
                             Luxury
@@ -94,11 +95,14 @@
 
                     </section>
 
-                </article>
+                </div>
+                <!-- card grid end -->
 
-            </div> <!-- container end -->
+            </article>
+            <!-- card end -->
 
-        </section>
+        </div>
+        <!-- container end -->
 
     </main>
 
