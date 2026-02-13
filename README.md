@@ -30,6 +30,7 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [https://fem-solutions.github.io/3-column-preview-card](https://fem-solutions.github.io/3-column-preview-card)
+- Solution URL: [https://www.frontendmentor.io/solutions/3-column-preview-card-jQo4PrDm9x](https://www.frontendmentor.io/solutions/3-column-preview-card-jQo4PrDm9x)
 
 ## My process
 
