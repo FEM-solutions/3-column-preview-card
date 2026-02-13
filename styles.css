@@ -113,6 +113,8 @@ html {
   margin-block-start: auto;
 
   font-family: var(--ff-body);
+  font-size: var(--fs-text);
+  font-weight: var(--fw-bold);
   text-decoration: none;
 
   border: 2px solid transparent; /* for hover states */
@@ -185,23 +187,48 @@ html {
 }
 
 /*--------------------------*\
+  #ATTRIBUTION 
+\*--------------------------*/
+
+.attribution {
+  font-size: var(--fs-text);
+  font-weight: var(--fw-regular);
+  color: var(--green-950);
+}
+
+.attribution__link {
+  text-decoration: none;
+  color: var(--green-950);
+  transition: text-decoration 0.2s ease;
+}
+
+.attribution__link:hover,
+.attribution__link:focus-visible {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .attribution__link {
+    transition-duration: 0.01ms;
+  }
+}
+
+/*--------------------------*\
   #LAYOUT 
 \*--------------------------*/
-* {
-  outline: 1px solid red;
-}
 
 main {
-  padding-block: var(--spacing-300);
-  background-color: var(--gray-100);
-}
-
-.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-block-size: 100dvh;
+
+  background-color: var(--gray-100);
+}
+
+.container {
+  padding-block: var(--spacing-300);
 
   padding-inline: var(--spacing-100);
 }
@@ -215,6 +242,13 @@ main {
   overflow: hidden; /* for border radius */
 }
 
+.footer {
+  padding: var(--spacing-100);
+
+  text-align: center;
+  background-color: var(--gray-100);
+}
+
 /*--------------------------*\
   #MEDIA-QUERIES 
 \*--------------------------*/
@@ -222,7 +256,7 @@ main {
 @media (min-width: 48rem) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
-    max-inline-size: 54rem;
+    max-inline-size: 55rem;
   }
 
   .card__text {
